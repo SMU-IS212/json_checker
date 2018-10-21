@@ -1,0 +1,8 @@
+{
+    "status": "error",
+    "messages": [
+        [
+            "ISBN13 record not found"
+        ]
+    ]
+}

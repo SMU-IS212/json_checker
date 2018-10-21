@@ -1,0 +1,24 @@
+{
+    "status": "success",
+    "storeid": 0,
+    "result": [
+        {
+            "title": "Brief History of Time",
+            "isbn13": "9781449474211",
+            "price": "40.00",
+            "availability": "23"
+        },
+        {
+            "title": "Founder of Php",
+            "isbn13": "9781449474221",
+            "price": "34.00",
+            "availability": "1"
+        },
+        {
+            "title": "Tale of Zelda",
+            "isbn13": "9781449474453",
+            "price": "33.40",
+            "availability": "21"
+        }
+    ]
+}

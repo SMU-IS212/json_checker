@@ -1,0 +1,4 @@
+title=Brief History of Time
+isbn13=9781449474211
+price=40.00
+availability=23
