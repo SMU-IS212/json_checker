@@ -1,6 +1,4 @@
-# bookstore-basic
-json_checker.php
-PHP version of the JSON checker. 
+# PHP version of the JSON checker. 
 -	You will need to change the value of $url to your application's web path that 
 contains your JSON APIs. __
 -	Or pass your application's web path as value for query parameter 'url' 
@@ -9,13 +7,21 @@ http://localhost/json_checker/json_checker.php?url=http://localhost/bookstore/js
 C:\wamp64\www\json_checker\> php json_checker.php http://localhost/bookstore/json 
         
 testcases\ 
+
     in 
+    
         Input for JSON API like name, password, isbn13 etc. 
+        
     Out  
+    
         Your expected output 
+        
     Yours __
+    
         Actual output generates by tested API 
+        
 Note 
+
 - Tests are excuted in same order of file name in input folder. 
 - Test will pass if API’s output is the same as your expected output (has all the correct JSON elements).
  Otherwise, if any part is wrong, the test will fail. 
