@@ -1,6 +1,0 @@
-{
-    "status": "error",
-    "messages": [
-        "invalid price"
-    ]
-}

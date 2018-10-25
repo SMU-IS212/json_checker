@@ -1,6 +1,6 @@
 {
     "status": "error",
-    "message": {
-        "1": "password cannot be empty"
-    }
+    "messages": [
+        "password cannot be empty"
+    ]
 }

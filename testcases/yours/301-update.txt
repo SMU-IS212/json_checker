@@ -1,6 +1,0 @@
-{
-    "status": "error",
-    "messages": {
-        "3": "availability cannot be empty"
-    }
-}
