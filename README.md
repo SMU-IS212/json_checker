@@ -1,11 +1,12 @@
 # PHP version of the JSON checker. 
 -	You will need to change the value of $url to your application's web path that 
-contains your JSON APIs. __
+contains your JSON APIs.
 -	Or pass your application's web path as value for query parameter 'url' 
 http://localhost/json_checker/json_checker.php?url=http://localhost/bookstore/json 
 -	Or, in command line, pass it as the first argument 
 C:\wamp64\www\json_checker\> php json_checker.php http://localhost/bookstore/json 
-        
+
+
 testcases\ 
 
     in 
@@ -16,7 +17,7 @@ testcases\
     
         Your expected output 
         
-    Yours __
+    Yours
     
         Actual output generates by tested API 
         
