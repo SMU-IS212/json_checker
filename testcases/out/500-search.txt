@@ -63,12 +63,6 @@
             "availability": "0"
         },
         {
-            "title": "Programming PHP",
-            "isbn13": "9780596006815",
-            "price": "68.70",
-            "availability": "1"
-        },
-        {
             "title": "SQL in Nutshell",
             "isbn13": "9781129474251",
             "price": "21.50",
