@@ -293,7 +293,16 @@ function httpRequest($url, $fields = null, $post = false, $multipart = false) {
  */
 function doAuthenticate($json_api_url, $directories, $filename) {
     // get inputs
-    $fields = parse_ini_file( "{$directories['in']}$filename");
+    /* BUG FIX
+    Date: 20181031
+    WAS: $fields = parse_ini_file( "{$directories['in']}$filename");
+    DESC: http://php.net/manual/en/function.parse-ini-file.php
+        Character ! have a special meaning in the value for parse_ini_file()
+    FIX: Use INI_SCANNER_RAW to  parse_ini_file() to read the value as it is.
+        Characters ; " \ are still special characters for parse_ini_file().  They need to be in double quotes.
+        key=";"\"
+    */
+    $fields = parse_ini_file( "{$directories['in']}$filename", false, INI_SCANNER_RAW);
 
     // Send HTTP POST
     $httpResult = httpRequest($json_api_url, $fields, true);
@@ -320,7 +329,13 @@ function doAuthenticate($json_api_url, $directories, $filename) {
     if ( isset($response->status) && @$response->status == @$answer->status ) {
         
         if ( $answer->status == 'error' ) {
-            $testResult['result'] = true;
+            /* BUG FIX
+            Date: 20181101
+            WAS: $testResult['result'] = true;
+            DESC: Forget to check the error messages.
+            FIX:  Add code to compare the json objects.
+            */
+            $testResult['result'] = jsons_are_equal($response, $answer);
             return $testResult;
             
         } elseif (  $answer->status == 'success' && isset($response->token ) && strlen($response->token) > 0) {
@@ -399,7 +414,16 @@ function doZipUpload($json_api_url, $directories, $filename, $token) {
  */
 function doGet($json_api_url, $directories, $filename, $token) {
     // get inputs
-    $fields = parse_ini_file( "{$directories['in']}$filename");
+    /* BUG FIX
+    Date: 20181031
+    WAS: $fields = parse_ini_file( "{$directories['in']}$filename");
+    DESC: http://php.net/manual/en/function.parse-ini-file.php
+        Character ! have a special meaning in the value for parse_ini_file()
+    FIX: Use INI_SCANNER_RAW to  parse_ini_file() to read the value as it is.
+        Characters ; " \ are still special characters for parse_ini_file().  They need to be in double quotes.
+        key=";"\"
+    */
+    $fields = parse_ini_file( "{$directories['in']}$filename", false, INI_SCANNER_RAW);
     
     if (!empty($token))
         $fields['token'] = $token;
