@@ -1,7 +1,0 @@
-{
-    "status": "success",
-    "num-record-loaded": {
-        "user.csv": 3,
-        "book.csv": 15
-    }
-}

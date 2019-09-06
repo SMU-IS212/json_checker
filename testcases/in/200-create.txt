@@ -1,4 +1,0 @@
-title=Programming PHP
-isbn13=9780596006815
-price=68.70
-availability=1

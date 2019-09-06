@@ -1,4 +1,0 @@
-keyword=of
-search=availability
-from=1
-to=99

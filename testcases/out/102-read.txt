@@ -1,9 +1,0 @@
-{
-    "status": "success",
-    "book": {
-        "title": "Albert Enstein's Works",
-        "isbn13": "9781449474223",
-        "price": "18.00",
-        "availability": "7"
-    }
-}
