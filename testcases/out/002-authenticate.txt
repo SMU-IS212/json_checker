@@ -1,4 +1,6 @@
 {
-    "status": "success",
-    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0ZXRpbWUiOiIyMDE4LTEwLTIwIDIxOjQwOjAzIn0.3DeHEQBycbQ2saSLhHOz_pbwt3zgUzsOqgjW6sZkBV4"
+    "status": "error",
+    "messages": [
+        "invalid username\/password"
+    ]
 }

@@ -1,3 +1,0 @@
-username=apple.2016
-
-password=apple123
