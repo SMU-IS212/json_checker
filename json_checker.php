@@ -163,37 +163,51 @@ function arrays_are_equal($arr1, $arr2) {
  */
 function jsons_are_equal($json1, $json2) {
     if ( is_null($json1) || is_null($json2) || gettype($json1) != 'object' || gettype($json2) != 'object') {
-        return false;
+
+        # handle special case where both json replies are JSON arrays and not JSON objects
+		if (gettype($json1) == 'array' && gettype($json2) == 'array') {
+		   if (arrays_are_equal($json1, $json2)) 
+			   return true;  # arrays are equal
+		   else  # arrays are not equal 
+			   return false;   
+		}  
+		else   # one reply is an array the other is not. clear error
+			return false;
+		
+		# main error of check. will return if either argument is null or either is not a JSON object
+		return false;
     }
 
     foreach ($json1 as $key => $value) {
         $type = gettype($value);
         if ( !isset($json2->{$key}) ) {
-            return false;
+			return false;
 
         } else{
             $value2 = $json2->{$key};
 
             if ( $type === 'object') {
                 if ( gettype($value2) !== 'object' || ! jsons_are_equal($value, $value2) ) {
-                    return false;
+					return false;
                 }
 
             } elseif ( $type === 'array') {
                 if ( gettype($value2) !== 'array' || ! arrays_are_equal($value, $value2) ) {
-                    return false;
+					return false;
                 }
 
             } elseif ( $value !== $value2 ) {
-                return false;
+			    return false;
 
             }
         }
     }
 
     foreach ($json2 as $key => $value) {
-        if ( !isset($json1->{$key}) ) return false;
-    }
+        if ( !isset($json1->{$key}) ) {
+				return false;
+        }
+	}  
 
     return true;
 }
